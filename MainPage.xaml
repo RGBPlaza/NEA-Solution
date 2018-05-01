@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="NEA_Solution.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NEA_Solution"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" RowSpacing="2" ColumnSpacing="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="CheckButton" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                BorderBrush="{StaticResource SystemControlTransparentRevealBorderBrush}"
+                Background="{StaticResource SystemControlTransparentRevealBackgroundBrush}"
+                Foreground="White"
+                Click="CheckButton_Click"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <StackPanel Spacing="16">
+                <TextBlock FontSize="72" FontFamily="Segoe MDL2 Assets" Text="&#xE0A2;" HorizontalTextAlignment="Center"/>
+                <TextBlock FontSize="24" FontFamily="Assets/Fonts/Montserrat-Bold.ttf#Montserrat" Text="CHECK"/>
+            </StackPanel>
+        </Button>
+
+        <Button Name="GenerateButton" 
+                Grid.Row="1" 
+                Grid.Column="2" 
+                BorderBrush="{StaticResource SystemControlTransparentRevealBorderBrush}"
+                Background="{StaticResource SystemControlTransparentRevealBackgroundBrush}"
+                Foreground="White"
+                Click="GenerateButton_Click"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+            <StackPanel Spacing="16">
+                <TextBlock FontSize="72" FontFamily="Segoe MDL2 Assets" Text="&#xE117;" HorizontalTextAlignment="Center"/>
+                <TextBlock FontSize="24" FontFamily="Assets/Fonts/Montserrat-Bold.ttf#Montserrat" Text="GENERATE"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+    
+</Page>
