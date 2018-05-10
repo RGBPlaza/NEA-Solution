@@ -7,11 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" RowSpacing="2" ColumnSpacing="2">
+    <Grid Background="{StaticResource SystemControlAcrylicWindowBrush}" Padding="16,8" RowSpacing="8">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="44"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,12 +22,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <StackPanel Spacing="4">
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="PassIndex"/>
+            <StackPanel Orientation="Horizontal" Spacing="8" Height="44">
+                <TextBlock FontSize="23" Height="44" Width="44" FontFamily="Segoe MDL2 Assets" Text="&#xE10F;" Padding="10"/>
+                <TextBlock FontSize="19" FontFamily="Assets/Fonts/Montserrat-SemiBold.ttf#Montserrat" Text="Home" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        
         <Button Name="CheckButton" 
-                Grid.Row="1" 
+                Grid.Row="2" 
                 Grid.Column="1" 
-                BorderBrush="{StaticResource SystemControlTransparentRevealBorderBrush}"
-                Background="{StaticResource SystemControlTransparentRevealBackgroundBrush}"
-                Foreground="White"
+                Style="{StaticResource ButtonRevealStyle}"
+                Background="Transparent"
                 Click="CheckButton_Click"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch">
@@ -36,11 +45,10 @@
         </Button>
 
         <Button Name="GenerateButton" 
-                Grid.Row="1" 
+                Grid.Row="2" 
                 Grid.Column="2" 
-                BorderBrush="{StaticResource SystemControlTransparentRevealBorderBrush}"
-                Background="{StaticResource SystemControlTransparentRevealBackgroundBrush}"
-                Foreground="White"
+                Style="{StaticResource ButtonRevealStyle}"
+                Background="Transparent"
                 Click="GenerateButton_Click"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch">
@@ -49,7 +57,7 @@
                 <TextBlock FontSize="24" FontFamily="Assets/Fonts/Montserrat-Bold.ttf#Montserrat" Text="GENERATE"/>
             </StackPanel>
         </Button>
-
+        
     </Grid>
     
 </Page>

@@ -46,5 +46,9 @@ namespace NEA_Solution
             Clipboard.SetContent(dataPackage);
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }

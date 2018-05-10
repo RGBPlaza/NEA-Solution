@@ -7,13 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" RowSpacing="8">
+    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" RowSpacing="8" Padding="16,8">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="44"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,18 +23,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="24">
-            Your new password is:
-        </TextBlock>
+        <StackPanel Grid.ColumnSpan="3" Spacing="4">
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="PassIndex"/>
+            <StackPanel Orientation="Horizontal" Spacing="8" Height="44">
+                <Button Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" Click="BackButton_Click"/>
+                <TextBlock FontSize="19" FontFamily="Assets/Fonts/Montserrat-SemiBold.ttf#Montserrat" Text="Generate Password" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
 
-        <TextBlock Name="PasswordTextBlock" Grid.Row="2" Grid.Column="1" FontWeight="Bold"
-                   HorizontalTextAlignment="Center" FontSize="48" Tapped="PasswordTextBlock_Tapped">
-        </TextBlock>
-        
-        <TextBlock Name="ScoreTextBlock" Grid.Row="3" Grid.Column="1" 
-                   HorizontalTextAlignment="Center" FontSize="24">
-            With a score of: y
-        </TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="24"/>
+        <TextBlock Name="PasswordTextBlock" Grid.Row="3" Grid.Column="1" FontWeight="Bold" HorizontalTextAlignment="Center" FontSize="48" Tapped="PasswordTextBlock_Tapped"/>
+        <TextBlock Name="ScoreTextBlock" Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="Center" FontSize="24"/>
 
     </Grid>
     

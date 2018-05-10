@@ -26,7 +26,17 @@ namespace NEA_Solution
         {
             this.InitializeComponent();
         }
-        
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
+
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             Evaluate();

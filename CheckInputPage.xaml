@@ -7,39 +7,51 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource SystemControlAcrylicWindowBrush}" RowSpacing="8">
+    <Grid Background="{StaticResource SystemControlAcrylicWindowBrush}" RowSpacing="8" Padding="16,8">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="48"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="44"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.ColumnSpan="5" Spacing="4">
+            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="PassIndex"/>
+            <StackPanel Orientation="Horizontal" Spacing="8" Height="44">
+                <Button Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" Click="BackButton_Click"/>
+                <TextBlock FontSize="19" FontFamily="Assets/Fonts/Montserrat-SemiBold.ttf#Montserrat" Text="Check Password" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        
         <!-- This Element uses a ColumnSpan of 3 to take up 250px of width -->
         <TextBox Name="PasswordTextBox"
-                 Grid.Row="1"
+                 Grid.Row="2"
                  Grid.Column="1" 
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch"
                  Grid.ColumnSpan="3"
-                 VerticalContentAlignment="Bottom"
-                 FontSize="20"
+                 Padding="12,10"
+                 FontSize="16"
                  PlaceholderText="Type Here..."
+                 BorderBrush="{StaticResource SystemControlTransparentRevealBorderBrush}"
                  KeyDown="PasswordTextBox_KeyDown">
         </TextBox>
 
         <Button Name="SubmitButton"
-                Grid.Row="2"
+                Grid.Row="3"
                 Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
+                Style="{StaticResource ButtonRevealStyle}"
                 Background="{StaticResource SystemControlBackgroundAccentBrush}"
                 Foreground="White"
                 Content="Check"
