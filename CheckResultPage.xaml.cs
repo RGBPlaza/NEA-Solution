@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,6 +31,7 @@ namespace NEA_Solution
 
         private AcrylicBrush backBrush;
         private Windows.UI.Color tintColor;
+        private ApplicationViewTitleBar titleBar;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -37,7 +39,10 @@ namespace NEA_Solution
             Password password = (Password)e.Parameter;
             ScoreTextBlock.Text = password.Score.ToString();
             
-            backBrush = new AcrylicBrush() { BackgroundSource = AcrylicBackgroundSource.HostBackdrop, TintColor = (Windows.UI.Color)App.Current.Resources["SystemChromeMediumColor"], TintOpacity = 0.7, TintTransitionDuration = new TimeSpan(0, 0, 1) };
+            titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.ButtonForegroundColor = Windows.UI.Colors.White;
+
+            backBrush = new AcrylicBrush() { BackgroundSource = AcrylicBackgroundSource.HostBackdrop, TintColor = (Windows.UI.Color)App.Current.Resources["SystemChromeMediumColor"], TintOpacity = 0.7, TintTransitionDuration = new TimeSpan(0, 0, 2) };
             switch (password.StrengthTier)
             {
                 case PasswordStrengthTier.Weak:
@@ -72,6 +77,7 @@ namespace NEA_Solution
             Frame.BackStack.Clear();
             Frame.BackStack.Add(mainPage);
             Frame.GoBack();
+            titleBar.ButtonForegroundColor = (Windows.UI.Color)App.Current.Resources["SystemBaseHighColor"];
         }
 
     }

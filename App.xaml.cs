@@ -95,8 +95,8 @@ namespace NEA_Solution
 
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.ButtonBackgroundColor = Windows.UI.Colors.Transparent;
+            titleBar.ButtonForegroundColor = (Windows.UI.Color)Resources["SystemBaseHighColor"];
             titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.Transparent;
-
         }
 
         /// <summary>
