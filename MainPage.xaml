@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Spacing="4">
+        <StackPanel Spacing="4" Grid.ColumnSpan="4">
             <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="PassIndex"/>
             <StackPanel Orientation="Horizontal" Spacing="8" Height="44">
                 <TextBlock FontSize="23" Height="44" Width="44" FontFamily="Segoe MDL2 Assets" Text="&#xE10F;" Padding="10"/>
